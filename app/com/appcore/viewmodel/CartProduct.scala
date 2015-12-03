@@ -18,7 +18,4 @@ object CartProduct {
     (JsPath \ "id").read[String] and
       (JsPath \ "qty").read[Double]
     )(CartProduct.apply _)
-
-
-
 }

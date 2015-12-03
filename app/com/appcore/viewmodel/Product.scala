@@ -8,5 +8,7 @@ import play.api.libs.json.Json
 case class Product (id :String, description : String, price : Double)
 
 object Product {
+
   implicit val productReader = Json.writes[Product]
+
 }
