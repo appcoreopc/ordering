@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 var r : Int => Int = a =>  a + 100
 var p : Int => Int => Int = a => b => a + b
@@ -20,3 +21,11 @@ def printAll(strings: String) {
   println("------")
   strings.foreach(println)
 }
+=======
+
+
+
+
+
+
+>>>>>>> bcb4597929a5cf41ee01fb4e02b94c96358291b1
