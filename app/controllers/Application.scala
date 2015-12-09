@@ -4,6 +4,7 @@ import com.appcore.viewmodel.CartProduct
 import play.api.mvc._
 
 class Application extends Controller {
+
   def index = Action {
     val cart = new CartRepository
     cart.createCart(new CartProduct(24, 1, 10))

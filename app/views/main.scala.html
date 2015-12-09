@@ -10,12 +10,9 @@
 <!-- Latest compiled and minified CSS -->
 
 <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
-
 <!-- Optional theme -->
 <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")>
 <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/custom.min.css")>
-
-
 
 </body>
 
@@ -214,29 +211,24 @@
     </div>
 </div>
 
-
-
 </html>
 
-
 <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-
+<script src='@routes.Assets.versioned("javascripts/angular.js")'></script>
+<script src='@routes.Assets.versioned("javascripts/indexApp.js")'></script>
 <script>
 
     $(document).ready(function() {
+        console.log("ready!");
 
-            console.log("ready!");
-
-    $("#testBtn").click(function () {
-            alert('testing');
-        $.ajax({
-          type: "POST",
+        /* $.ajax({
+          type: "get",
           url: 'http://localhost:9000/cart/add',
           data: JSON.stringify({ 'id' : 'testg', 'qty': 12}),
           dataType: 'json',
           contentType : 'application/json'
-        });
+        });  */
+
     });
-});
 
 </script>

@@ -6,7 +6,7 @@ import play.api.db.DB
 import play.api.Play.current
 
 
-trait ProductRepository extends RepositoryService {
+trait ProductRepository {
 
   def getProducts(): List[OrderProduct] = {
 
