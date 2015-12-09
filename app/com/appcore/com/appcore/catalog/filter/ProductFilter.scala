@@ -1,13 +1,13 @@
 package com.appcore.com.appcore.catalog.filter
 
-import com.appcore.viewmodel.Product
+import com.appcore.viewmodel.{OrderProduct}
 
 
 object Filter {
 
-  type ProductFilter = Product => Boolean
+  type ProductFilter = OrderProduct => Boolean
 
-  def searchProduct(products : Set[Product], filter : ProductFilter) = products.filter(filter)
+  def searchProduct(products : Set[OrderProduct], filter : ProductFilter) = products.filter(filter)
 
   // Defines filters //
   val searchByProductName : String => ProductFilter = keyword => product => product.name == keyword

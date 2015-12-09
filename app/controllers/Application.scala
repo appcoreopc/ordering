@@ -1,27 +1,12 @@
 package controllers
-import anorm._
-import play.api._
+import com.appcore.com.appcore.com.appcore.data.CartRepository
+import com.appcore.viewmodel.CartProduct
 import play.api.mvc._
-import play.api.db.DB
-import play.api.Play.current
 
 class Application extends Controller {
-
   def index = Action {
-    // try query database //
-    DB.withConnection { implicit c =>
-      val result: Boolean = SQL("Select 1").execute()
-
-      if (result)
-         {
-           Ok("ok we have results ")
-         }
-      else
-        Ok("opsss...query not succesful ")
-    }
-
-
+    val cart = new CartRepository
+    cart.createCart(new CartProduct(24, 1, 10))
     Ok(views.html.index("Your new application is ready."))
   }
-
 }
