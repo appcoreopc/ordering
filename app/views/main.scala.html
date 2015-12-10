@@ -1,23 +1,18 @@
 @(title: String)(content: Html)
 
-<html ng-app="chatroomModule">
+<html>
 <head>
 </head>
 
-<body id='home'>
-
-<!-- Latest compiled and minified JavaScript -->
-<!-- Latest compiled and minified CSS -->
-
 <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
-<!-- Optional theme -->
-<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")>
-<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/custom.min.css")>
+<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")">
+<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/custom.min.css")">
 
-</body>
+<script src='@routes.Assets.versioned("javascripts/angular.js")'></script>
 
+<body id='home' ng-app="catalogApp" ng-controller="catalogController">
 
-<div class="navbar navbar-default navbar-fixed-top navbar-transparent">
+<div class="navbar navbar-default navbar-fixed-top navbar-transparent" data-ng-init="init()">
     <div class="container">
         <div class="navbar-header">
 
@@ -69,7 +64,6 @@
     </div>
 </div>
 
-
 <div class="splash" style="background-position: 0px -148.67px;">
     <div class="container">
         <div class="row">
@@ -101,42 +95,20 @@
 
 <div class="section-tout">
     <div class="container">
-
-        <div class="row">
+        <div class="row" ng-repeat="element in catalog">
             <div class="col-lg-4 col-sm-6">
+                <ul>
+                    <li>{{element.description}}</li>
+                    <li><img src="@routes.Assets.versioned("images/add_product.png")"></li>
+                </ul>
 
-
-                <button id="testBtn"> Send message </button>
-
-
-            </div>
-            <div class="col-lg-4 col-sm-6">
-
-
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <h3><i class="fa fa-wrench"></i> Tuned for 3.3.5</h3>
-                <p>Themes are built for the latest version of Bootstrap. <a href="2/">Version 2</a> and <a target="_blank" href="https://github.com/thomaspark/bootswatch/tags">others</a> are also available to download.</p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <h3><i class="fa fa-cogs"></i> Modular</h3>
-                <p>Changes are contained in just two LESS or SASS files, enabling modification and ensuring forward compatibility.</p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <h3><i class="fa fa-cloud"></i> Get Plugged In</h3>
-                <p>An <a href="./help/#api">API</a> is available for integrating with your platform. In use by <a href="https://nodebb.org/" target="_blank">NodeBB</a>, <a href="http://yabdab.com/stacks/bootsnap" target="_blank">BootSnap</a>, and others.</p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <h3><i class="fa fa-bullhorn"></i> Stay Updated</h3>
-                <p>Be notified about updates by subscribing via <a href="http://feeds.feedburner.com/bootswatch">RSS feed</a>, <a href="http://feedburner.google.com/fb/a/mailverify?uri=bootswatch&amp;loc=en_US">email</a>, or <a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Tumblr</a>.</p>
             </div>
         </div>
-
     </div>
 </div>
 
 
-<div class="modal fade" ng-controller="CreateRoomController" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -160,7 +132,7 @@
 </div>
 
 
-<div class="modal fade" ng-controller="MemberController" id="myMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -186,7 +158,7 @@
 </div>
 
 
-<div class="modal fade" ng-controller="RegistrationController" id="registerMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="registerMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -211,24 +183,9 @@
     </div>
 </div>
 
+</body>
 </html>
 
-<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-<script src='@routes.Assets.versioned("javascripts/angular.js")'></script>
+
 <script src='@routes.Assets.versioned("javascripts/indexApp.js")'></script>
-<script>
 
-    $(document).ready(function() {
-        console.log("ready!");
-
-        /* $.ajax({
-          type: "get",
-          url: 'http://localhost:9000/cart/add',
-          data: JSON.stringify({ 'id' : 'testg', 'qty': 12}),
-          dataType: 'json',
-          contentType : 'application/json'
-        });  */
-
-    });
-
-</script>
