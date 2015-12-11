@@ -10,7 +10,7 @@ object Filter {
   def searchProduct(products : Set[OrderProduct], filter : ProductFilter) = products.filter(filter)
 
   // Defines filters //
-  val searchByProductName : String => ProductFilter = keyword => product => product.name == keyword
+  val searchByProductName : String => ProductFilter = keyword => product => product.title == keyword
   val searchByProductDescription : String => ProductFilter = keyword => product => product.description == keyword
   val searchByProductPrice : Double  => ProductFilter = keyword => product => product.price == keyword
 

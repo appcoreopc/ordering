@@ -5,8 +5,9 @@ import com.appcore.viewmodel.OrderProduct
 import play.api.db.DB
 import play.api.Play.current
 
+//case class OrderProduct(id :Int, title : String, description : String, price : Double)
 
-trait ProductRepository {
+trait ProductRepository extends ProductCatalogService {
 
   def getProducts(): List[OrderProduct] = {
 
@@ -28,5 +29,24 @@ trait ProductRepository {
           prod[String]("DESCRIPTION"), prod[Int]("PRICE"))
       ).toList.filter(filter)
     }
+  }
+}
+
+trait ProductCatalogService
+{
+  def getProducts(): List[OrderProduct]
+  def getProducts(filter : OrderProduct => Boolean): List[OrderProduct]
+}
+
+class Catalog {
+
+  this : ProductCatalogService =>
+
+  def getProducts(): List[OrderProduct] = {
+     return this.getProducts()
+  }
+
+  def getProducts(filter : OrderProduct => Boolean): List[OrderProduct] = {
+  return this.getProducts(filter)
   }
 }

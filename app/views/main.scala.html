@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
 <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")">
 <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/custom.min.css")">
-
 <script src='@routes.Assets.versioned("javascripts/angular.js")'></script>
 
 <body id='home' ng-app="catalogApp" ng-controller="catalogController">
@@ -98,8 +97,9 @@
         <div class="row" ng-repeat="element in catalog">
             <div class="col-lg-4 col-sm-6">
                 <ul>
+                    <li>{{element.title}}</li>
                     <li>{{element.description}}</li>
-                    <li><img src="@routes.Assets.versioned("images/add_product.png")"></li>
+                    <li><span><img src="@routes.Assets.versioned("images/add_product.png")"></span></li>
                 </ul>
 
             </div>
@@ -188,4 +188,3 @@
 
 
 <script src='@routes.Assets.versioned("javascripts/indexApp.js")'></script>
-
