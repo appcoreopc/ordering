@@ -1,7 +1,7 @@
 package com.appcore.actors
 
-import akka.actor.{Props, ActorSystem, ActorRef}
-import com.appcore.viewmodel.{PaymentCartProduct, CartProduct}
+import akka.actor.{ActorSystem, Props}
+import com.appcore.viewmodel.PaymentCartProduct
 
 class OrderingEnv {
 
@@ -12,4 +12,5 @@ class OrderingEnv {
   def pay(cartProduct : PaymentCartProduct) = {
     paymentActor ! cartProduct
   }
+
 }

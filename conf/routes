@@ -16,6 +16,6 @@ GET /catalog/product/:id   controllers.Catalog.getProduct(id)
 #cart
 GET /cart       controllers.Cart.index
 POST /cart/add  controllers.Cart.add
-
+POST /cart/checkout  controllers.Cart.checkOut
 
 

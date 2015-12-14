@@ -1,6 +1,8 @@
 package controllers
 
-import com.appcore.viewmodel.CartProduct
+import com.appcore.actors.OrderingEnv
+import com.appcore.com.appcore.providers.PaymentProviderType
+import com.appcore.viewmodel.{PaymentCartProduct, CartProduct}
 import play.api.mvc._
 
 class Cart extends Controller {
@@ -26,6 +28,23 @@ class Cart extends Controller {
       }
       else {
         Ok("ok but no cart data added!")
+      }
+  }
+
+  def checkOut = Action {
+    request =>
+      val cart = request.session.get("cart").getOrElse(None)
+      if (cart != None) {
+
+        val cartProduct = CartProduct(1, 1, 20)
+        val orderingEnv = new OrderingEnv
+        orderingEnv.pay(new PaymentCartProduct("1", PaymentProviderType.Master,cartProduct))
+
+        Ok("Done!")
+
+      }
+      else {
+        Ok("No item placed in cart to checkout.")
       }
   }
 }

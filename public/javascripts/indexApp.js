@@ -23,7 +23,6 @@ var catalogApp = angular.module('catalogApp',[]).controller('catalogController',
  $scope.addToCart = function(productId, qty)
  {
    console.log(productId +  " " + qty);
-
    $http({
            url: '/cart/add',
            method: "POST",
@@ -37,6 +36,23 @@ var catalogApp = angular.module('catalogApp',[]).controller('catalogController',
 
         });
  };
+
+$scope.checkOutCart = function()
+{
+    console.log('test');
+
+      $http({
+                url: '/cart/checkout',
+                method: "POST"
+             }).then(function(response){
+                console.log(response);
+                if (response)
+                {
+                }
+             }, function(errorResponse){
+
+             });
+};
 
 }]);
 
