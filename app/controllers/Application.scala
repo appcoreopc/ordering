@@ -8,6 +8,6 @@ class Application extends Controller {
   def index = Action {
     val cart = new CartRepository
     cart.createCart(new CartProduct(24, 1, 10))
-    Ok(views.html.index("Your new application is ready."))
+    Ok(views.html.index("Your new application is ready.")).withSession("userId" -> "test@gmail.com")
   }
 }

@@ -18,6 +18,25 @@ var catalogApp = angular.module('catalogApp',[]).controller('catalogController',
      }, function(errorResponse){
 
      });
- }
+ };
+
+ $scope.addToCart = function(productId, qty)
+ {
+   console.log(productId +  " " + qty);
+
+   $http({
+           url: '/cart/add',
+           method: "POST",
+           data : JSON.stringify({ id : 1,  productId : productId, qty : qty })
+        }).then(function(response){
+           console.log(response);
+           if (response)
+           {
+           }
+        }, function(errorResponse){
+
+        });
+ };
+
 }]);
 

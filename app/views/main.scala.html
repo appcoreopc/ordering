@@ -88,7 +88,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -99,89 +98,15 @@
                 <ul>
                     <li>{{element.title}}</li>
                     <li>{{element.description}}</li>
-                    <li><span><img src="@routes.Assets.versioned("images/add_product.png")"></span></li>
+                    <li><span><img ng-src="@routes.Assets.versioned("images/add_product.png")"
+                        ng-click="addToCart(element.id, 1)"></span></li>
                 </ul>
-
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
-            </div>
-            <div class="modal-body">
-
-                <label for="roomName">Room name:</label>
-                <input type="text" id="roomName" ng-model="roomName"  name="roomName"/>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" ng-click="createRoom();" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="myMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
-            </div>
-            <div class="modal-body">
-
-                <label for="memberName">Room name:</label>
-                <select id="memberName" name="memberName">
-
-                </select>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="registerMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
-            </div>
-            <div class="modal-body">
-
-                <label for="memberName">Room name:</label>
-                <select id="memberName" name="memberName">
-
-                </select>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 </body>
 </html>
